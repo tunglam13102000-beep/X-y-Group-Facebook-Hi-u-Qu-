@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Lexend:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Lexend", sans-serif;
+  --font-poppins: "Lexend", sans-serif;
+  
+  --color-primary: #005bbf;
+  --color-primary-container: #1a73e8;
+  --color-secondary: #9d4300;
+  --color-secondary-container: #fd761a;
+  --color-secondary-fixed: #ffdbca;
+  --color-surface: #f8f9ff;
+  --color-on-background: #0b1c30;
+  --color-on-surface-variant: #414754;
+  --color-outline-variant: #c1c6d6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-high: #dce9ff;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-background font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/30;
+  }
+
+  @keyframes glow-pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 49, 49, 0.4), 0 0 10px rgba(255, 49, 49, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 49, 49, 0.8), 0 0 30px rgba(255, 49, 49, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 49, 49, 0.4), 0 0 10px rgba(255, 49, 49, 0.2);
+    }
+  }
+
+  .animate-glow-red {
+    animation: glow-pulse 2s infinite ease-in-out;
+  }
+
+  @keyframes strong-glow-blue {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 91, 191, 0.5), 0 0 10px rgba(0, 91, 191, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(0, 91, 191, 0.9), 0 0 45px rgba(26, 115, 232, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 91, 191, 0.5), 0 0 10px rgba(0, 91, 191, 0.3);
+    }
+  }
+
+  .animate-glow-blue-strong {
+    animation: strong-glow-blue 1.5s infinite ease-in-out;
+  }
+}
